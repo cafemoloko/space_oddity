@@ -10,8 +10,8 @@ current_date = datetime.today()
 time_elapsed = current_date - launch_date
 total_seconds_elapsed = time_elapsed.total_seconds()
 
-# Song duration in seconds (5 minutes 15 seconds)
-song_duration_seconds = 5 * 60 + 15
+# Song duration in seconds (5 minutes 18 seconds)
+song_duration_seconds = 5 * 60 + 18
 
 times_played = total_seconds_elapsed // song_duration_seconds
 
