@@ -3,18 +3,19 @@
 
 from datetime import datetime
 
-# Tesla Roadster launch date: February 6, 2018
+# Tesla Roadster launch date and song duration in seconds (5 minutes 18 seconds)
 launch_date = datetime(2018, 2, 6)
-current_date = datetime.today()
-
-time_elapsed = current_date - launch_date
-total_seconds_elapsed = time_elapsed.total_seconds()
-
-# Song duration in seconds (5 minutes 18 seconds)
 song_duration_seconds = 5 * 60 + 18
 
-times_played = total_seconds_elapsed // song_duration_seconds
+# Function to calculate formatted times played
+def calculate_times_played(launch_date, end_date):
+    return "{:,.0f}".format((end_date - launch_date).total_seconds() // song_duration_seconds).replace(",", " ")
 
-formatted_times_played = "{:,.0f}".format(times_played).replace(",", " ")
-print(formatted_times_played)
+# Calculate times played since launch until today
+print(f"Times played since launch: {calculate_times_played(launch_date, datetime.today())}")
+
+# Calculate times played until David Bowie's birthday (January 8, 2026)
+bowie_birthday = datetime(2026, 1, 8)
+print(f"Times played by Bowie's birthday: {calculate_times_played(launch_date, bowie_birthday)}")
+
 
